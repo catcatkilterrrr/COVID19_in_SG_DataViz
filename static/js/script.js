@@ -185,7 +185,7 @@ function createDailyData(obj) {
     let currMonth = months[date[1]];
     $('#dateData').html(`<h1>${date[0]} ${currMonth} 2020</h1> <div id="numbers"> ${currDateData.join("</div>")}</div>`);
 
-    $('#news').html(`From the news<a href="${obj['news']['link']}"><h2>${obj['news']['headline']}</h2></a>
+    $('#news').html(`From the news<a href="${obj['news']['link']}" target="_blank"><h2>${obj['news']['headline']}</h2></a>
     <p>${obj['news']['para']}</p>`); 
 
     let dict = obj['social media'];
@@ -194,7 +194,7 @@ function createDailyData(obj) {
     let comment = dict['comment'];
     let link = dict['link'];
 
-    $('#sm').html(`From <a href = "${link}">${platform}</a><br><h3>${username}</h3><br>${comment}`);
+    $('#sm').html(`From <a href="${link}" target="_blank">${platform}</a><br><h3>${username}</h3><br>${comment}`);
   
 }
 
