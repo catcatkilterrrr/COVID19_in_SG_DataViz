@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}
+
+a {
+    color: white;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+}
+
+#dataViz {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    height: 70vh; 
+}
+
+#key {
+    display: flex;
+    flex-basis:18%;
+    flex-shrink: 2;
+    padding: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+#graph {
+    flex-basis:60%;
+    /* width: 60vw; */
+    flex-grow: 5;
+    flex-shrink: 1;
+}
+
+#ptntData {
+    flex-basis:18%;
+    /* width: 19vw; */
+    flex-shrink: 2;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#ptntInfo {
+    margin: 5px 0px;
+    padding: 5px;
+    width: 40%;
+}
+
+#patStat {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
+}
+
+#info {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    height: 30vh;
+}
+
+#dateData {
+    width: 31vw;
+}
+
+#numbers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#number {
+    margin: 5px 0px;
+    padding: 5px;
+    width: 30%;
+}
+
+#stat {
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+#news {
+    width: 31vw;
+    padding: 15px;
+}
+#sm {
+    width: 31vw;
+    padding: 15px;
+}
+
+.dateButton {
+	background-color:transparent;
+    color:#ffffff;
+    border: transparent;
+	font-family:Arial;
+	font-size:32px;
+	padding:16px;
+	text-decoration:none;
+}
+
+.parKey {
+    width: 100%;
+    flex-grow: 1;
+    background-color: transparent;
+    border: white;
+    margin: 2px;
+    padding: 10px;
+    text-align: left;
+    border-width: 2px;
+    border-style: solid;
+    color: white; 
+    font-size: 18px;
+}
+
+#keyColors {
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    flex-grow: 10;
+    height: 45%;
+    overflow: auto;
+}

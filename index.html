@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>COVID-19 in Singapore</title>
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="module" src="node_modules/three/build/three.js"></script>
+
+  </head>
+  <body>
+    <div id="container">
+      <div id="dataViz">
+        <div id="key">
+          <button id="clus" class="parKey">Cluster</button> <br>
+          <button id="age" class="parKey">Age</button> <br>
+          <button id="gend" class="parKey">Gender</button> <br>
+          <button id="hospStat" class="parKey">Hospitalized/Discharged</button> <br>
+          <button id="nat" class="parKey">Citizenship/PR/Pass type</button> <br>
+          <div id="keyColors"></div>
+        </div>
+        <div id="graph"></div>
+        <div id="ptntData"><p>Mouseover in graph for individual patient data.</p></div>
+      </div>     
+      <div id="info">
+        <button id="prev" class="dateButton">&larr;</button>
+        <div id="dateData"><p>dataData</p></div>
+        <div id="news"><p>News from that day</p></div>
+        <div id="sm"><p>Social Media Comment from that day</p></div>
+        <button id="next" class="dateButton">&rarr;</button>
+      </div>
+    </div>
+    <script type="module" src="static/js/Patient.js"></script>
+    <script type="module" src="static/js/script.js"></script>
+
+  </body>
+</html>
