@@ -58,7 +58,6 @@ class Patient {
             }
         }
         if (data.Cluster == 'U') {
-            console.log(data.Cluster);
             this.x=Math.random()-0.5;
             this.y=Math.random()-0.5;
             this.z = Math.random()-0.5;
@@ -84,7 +83,6 @@ class Patient {
     }
 
     create() { 
-        // radius, width segments, height segments
         let geometry = new THREE.SphereBufferGeometry(0.1,6,6);
         geometry.translate(this.translate.x, this.translate.y, this.translate.z);
         this.material = new THREE.MeshBasicMaterial();

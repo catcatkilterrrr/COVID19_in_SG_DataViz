@@ -64,7 +64,6 @@ function init(){
         allPatients.data = json;
         allPatients.currentParColor = 'cluster';
         allPatients.getClusterProportions(); 
-        console.log(allPatients.clusterCounts, allPatients.totalCaseCount);
         for (let dateid of Object.keys(allPatients.data)) {
             for (let pats of Object.keys(allPatients.data[dateid]['cases'])) {
                 allPatients.addPatient(dateid, pats, allPatients.data[dateid]['cases'][pats]);
@@ -73,6 +72,7 @@ function init(){
         toNext();
     });
     
+    // set up graph canvas
     const gw = $('#graph').width();
     const gh = $('#graph').height();
 
@@ -81,40 +81,9 @@ function init(){
     camera = new THREE.PerspectiveCamera(60, gw / gh, 0.1, 1000);
     camera.position.set(0, 0, 20); 
 
-    let keyHtml = '';
-    for (let color of Object.keys(clusColorsS)) {
-        keyHtml += `<div style="width:30%;font-size:14px;display:flex;align-items:center;">
-        <svg width="20" height="20"><rect width="15" height="15" style="fill:#${clusColorsS[color]};" /></svg>  ${color}</div>`
-    }
-
-    $('#keyColors').html(keyHtml);
-
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(gw, gh);
-    $('#next').click(toNext);
-    $('#prev').click(toPrev);
-    $(document).keydown(function(e) {
-        console.log("keydown");
-        let keycode = e.which;
-        if (keycode == 39) {
-            e.preventDefault();
-            console.log("right button pressed");
-            toNext();
-            return
-        }
-        if  (keycode ==  37) {
-            e.preventDefault();
-            console.log("left button pressed");
-            toPrev();
-            return       
-        }
-    });
-
-    $('#gend').click(() => {switchColor('gender'); highlight('#gend');});
-    $('#clus').click(()=>{switchColor('cluster'); highlight('#clus');});
-    $('#age').click(()=>{switchColor('age'); highlight('#age')});
-    $('#hospStat').click(() => {switchColor('disch'); highlight('#hospStat')});
-    $('#nat').click(() => {switchColor('nat'); highlight('#nat')});
+    
     var renderScene = new RenderPass( scene, camera );
     var bokehPass = new BokehPass( scene, camera, {
         focus: 1.0,
@@ -135,7 +104,37 @@ function init(){
     scene.add(nodeGraph);
 
     $('#graph').append(renderer.domElement);
-    // $(renderer.domElement).insertBefore('#dataViz');
+
+    // set up HTML, key, buttons, UI elements etc.
+    let keyHtml = '';
+    for (let color of Object.keys(clusColorsS)) {
+        keyHtml += `<div style="width:30%;font-size:14px;display:flex;align-items:center;">
+        <svg width="20" height="20"><rect width="15" height="15" style="fill:#${clusColorsS[color]};" /></svg>  ${color}</div>`
+    }
+    $('#keyColors').html(keyHtml);
+
+    $('#next').click(toNext);
+    $('#prev').click(toPrev);
+    $(document).keydown(function(e) {
+        let keycode = e.which;
+        if (keycode == 39) {
+            e.preventDefault();
+            toNext();
+            return
+        }
+        if  (keycode ==  37) {
+            e.preventDefault();
+            toPrev();
+            return       
+        }
+    });
+
+    $('#gend').click(() => {switchColor('gender'); highlight('#gend');});
+    $('#clus').click(()=>{switchColor('cluster'); highlight('#clus');});
+    $('#age').click(()=>{switchColor('age'); highlight('#age')});
+    $('#hospStat').click(() => {switchColor('disch'); highlight('#hospStat')});
+    $('#nat').click(() => {switchColor('nat'); highlight('#nat')});
+
 
     animate();
 
@@ -160,7 +159,6 @@ function init(){
         controls.update();
         requestAnimationFrame(animate);
         composer.render();
-        // renderer.render(scene, camera);
     };
 }
 
