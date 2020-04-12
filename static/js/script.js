@@ -94,7 +94,7 @@ function init(){
     renderer.setSize(gw, gh);
     $('#next').click(toNext);
     $('#prev').click(toPrev);
-    $('body').keypress(function(e) {
+    $(document).keypress(function(e) {
         let keycode = (e.keyCode ? e.keyCode : e.which);
         if (keycode == 39) {
             console.log("right button pressed");
