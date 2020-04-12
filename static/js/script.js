@@ -1,11 +1,11 @@
 // import * as THREE from '/node_modules/three/build/three.js';
 // var THREE = require('/node_modules/three/build/three');
-import {Patients} from './Patient.js';
+// import {Patients} from './Patient.js';
 // import {OrbitControls} from '/node_modules/three/examples/jsm/controls/OrbitControls.js';
-import { EffectComposer } from '/node_modules/three/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from '/node_modules/three/examples/jsm/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from '/node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js';
-import { BokehPass } from '/node_modules/three/examples/jsm/postprocessing/BokehPass.js';
+// import { EffectComposer } from '/node_modules/three/examples/jsm/postprocessing/EffectComposer.js';
+// import { RenderPass } from '/node_modules/three/examples/jsm/postprocessing/RenderPass.js';
+// import { UnrealBloomPass } from '/node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js';
+// import { BokehPass } from '/node_modules/three/examples/jsm/postprocessing/BokehPass.js';
 
 var camera, renderer, prevMouse;
 var raycaster = new THREE.Raycaster();
