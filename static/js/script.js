@@ -34,7 +34,7 @@ const clusColorsS = {
     'CP':'f0ff45','SKA':'0ffa3f','NCL': '30ffaf',
     };
 
-const ageColors = {'y':'hsl(306,100%,40%)', 'o': 'hsl(126,100%,90%)', 'm':'hsl(236,100%,60%)' };
+const ageColors = {'y':'hsl(306,100%,40%)', 'o': 'hsl(126,100%,95%)', 'm':'hsl(236,100%,60%)' };
 const natColors = {'Citizen': 'ffffff', 'PR':'6699ff', 'Long term pass': '00ff55', 'Work pass':'01ff33', 'Other':'aa3030'};
 const dischColors = {'Discharged':'55ff55', 'Hospitalized': '9055ff', 'Demised':'ee2020'};
 const genderColors = {'Male':'6666ff', 'Female': 'ff5555'};
@@ -95,11 +95,11 @@ function init(){
     $('#next').click(toNext);
     $('#prev').click(toPrev);
 
-    $('#gend').click(() => switchColor('gender'));
-    $('#clus').click(() => switchColor('cluster'));
-    $('#age').click(() => switchColor('age'));
-    $('#hospStat').click(() => switchColor('disch'));
-    $('#nat').click(() => switchColor('nat'));
+    $('#gend').click(() => {switchColor('gender'); highlight('#gend');});
+    $('#clus').click(() => {switchColor('cluster'); highlight('#clus')});
+    $('#age').click(() => {switchColor('age'); highlight('#age')});
+    $('#hospStat').click(() => {switchColor('disch'); highlight('#hospStat')});
+    $('#nat').click(() => {switchColor('nat'); highlight('#nat')});
     var renderScene = new RenderPass( scene, camera );
     var bokehPass = new BokehPass( scene, camera, {
         focus: 1.0,
@@ -258,8 +258,8 @@ function switchColor(par) {
             </linearGradient>
       </defs><rect width="25" height="200" style="fill:url(#grad1);" /></svg>
       <div style="display:flex; flex-wrap: wrap; flex-direction: column; justify-content: space-between;">
-        <div style="padding:5px;">young</div>
-        <div style="padding:5px;">old</div>
+        <div style="padding:5px;">0 years old</div>
+        <div style="padding:5px;">102 years old</div>
       </div>`
         $('#keyColors').html(keyHtml);
         return;
@@ -278,4 +278,17 @@ function switchColor(par) {
         <svg width="20" height="20"><rect width="15" height="15" style="fill:#${cKey[color]};" /></svg>   ${color}</div>`
     }
     $('#keyColors').html(keyHtml);
+}
+
+function highlight(button_id) {
+    let buttonArr = ['#gend', '#age', '#clus', '#hospStat', '#nat']	
+    for (let b of buttonArr) {
+        if (b == button_id) {
+            $(button_id).css('background', '#ffffff');
+            $(button_id).css('color', '#000000');
+        } else {
+            $(button_id).css('background', '#000000');
+            $(button_id).css('color', '#ffffff');    
+        }
+    }
 }
