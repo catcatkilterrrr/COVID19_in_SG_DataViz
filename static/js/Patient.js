@@ -258,4 +258,4 @@ class Patients {
 
 }   
 
-export {Patient, Patients}
+// export {Patient, Patients}
