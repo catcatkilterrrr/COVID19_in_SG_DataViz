@@ -284,11 +284,11 @@ function highlight(button_id) {
     let buttonArr = ['#gend', '#age', '#clus', '#hospStat', '#nat']	
     for (let b of buttonArr) {
         if (b == button_id) {
-            $(button_id).css('background', '#ffffff');
-            $(button_id).css('color', '#000000');
+            $(b).css('background', '#ffffff');
+            $(b).css('color', '#000000');
         } else {
-            $(button_id).css('background', '#000000');
-            $(button_id).css('color', '#ffffff');    
+            $(b).css('background', '#000000');
+            $(b).css('color', '#ffffff');    
         }
     }
 }
