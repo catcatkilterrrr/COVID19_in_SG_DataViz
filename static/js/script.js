@@ -108,9 +108,9 @@ function init(){
         }
     });
 
-    $('#gend').click(function() {switchColor('gender'); highlight('#gend');});
-    $('#clus').click(fuction() {switchColor('cluster'); highlight('#clus')});
-    $('#age').click(function() {switchColor('age'); highlight('#age')});
+    $('#gend').click(() => {switchColor('gender'); highlight('#gend');});
+    $('#clus').click(()=>{switchColor('cluster'); highlight('#clus');});
+    $('#age').click(()=>{switchColor('age'); highlight('#age')});
     $('#hospStat').click(() => {switchColor('disch'); highlight('#hospStat')});
     $('#nat').click(() => {switchColor('nat'); highlight('#nat')});
     var renderScene = new RenderPass( scene, camera );
