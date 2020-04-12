@@ -83,7 +83,6 @@ function init(){
 
     let keyHtml = '';
     for (let color of Object.keys(clusColorsS)) {
-        console.log(clusColorsS[color]);
         keyHtml += `<div style="width:30%;font-size:14px;display:flex;align-items:center;">
         <svg width="20" height="20"><rect width="15" height="15" style="fill:#${clusColorsS[color]};" /></svg>  ${color}</div>`
     }
@@ -94,14 +93,17 @@ function init(){
     renderer.setSize(gw, gh);
     $('#next').click(toNext);
     $('#prev').click(toPrev);
-    $(document).keypress(function(e) {
-        let keycode = (e.keyCode ? e.keyCode : e.which);
+    $(document).keydown(function(e) {
+        console.log("keydown");
+        let keycode = e.which;
         if (keycode == 39) {
+            e.preventDefault();
             console.log("right button pressed");
             toNext();
             return
         }
         if  (keycode ==  37) {
+            e.preventDefault();
             console.log("left button pressed");
             toPrev();
             return       

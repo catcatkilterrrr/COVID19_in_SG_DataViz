@@ -250,7 +250,6 @@ class Patients {
             this.clusterSort.push([key, this.clusterCounts[key]/this.totalCaseCount]);
         }
         this.clusterSort.sort(function(a, b) {return b[1]-a[1]});
-        console.log(this.clusterSort);
         for (let i = 0; i< this.clusterSort.length; i++) {
             this.clusIds[this.distribute[i]]=this.clusterSort[i][0];
         }
