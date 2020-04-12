@@ -15,7 +15,7 @@ var nodeGraph = new THREE.Object3D();
 var allPatients = new Patients(nodeGraph);
 var currentDateId=1;
 
-const clusColors = { 
+const clusColorsS = { 
     'CHN': '999900', 'MHD': '990099', 'I': '1ce6ff',
     'U': 'ff34ff','L': 'ff4a46', 'YTH': 'ff8c66',
     'LCM': 'ffff66','GAOG': '8cff66','GH': '66ffd9',
@@ -241,7 +241,7 @@ function switchColor(par) {
     if (par == 'cluster') {
         wdth = '30%';
         allPatients.showLinks(currentDateId);
-        cKey = clusColors;
+        cKey = clusColorsS;
     } else {
         allPatients.hideLinks(currentDateId);
     }
