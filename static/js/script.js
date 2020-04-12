@@ -94,10 +94,23 @@ function init(){
     renderer.setSize(gw, gh);
     $('#next').click(toNext);
     $('#prev').click(toPrev);
+    $('body').keypress(function(e) {
+        let keycode = (e.keyCode ? e.keyCode : e.which);
+        if (keycode == 39) {
+            console.log("right button pressed");
+            toNext();
+            return
+        }
+        if  (keycode ==  37) {
+            console.log("left button pressed");
+            toPrev();
+            return       
+        }
+    });
 
-    $('#gend').click(() => {switchColor('gender'); highlight('#gend');});
-    $('#clus').click(() => {switchColor('cluster'); highlight('#clus')});
-    $('#age').click(() => {switchColor('age'); highlight('#age')});
+    $('#gend').click(function() {switchColor('gender'); highlight('#gend');});
+    $('#clus').click(fuction() {switchColor('cluster'); highlight('#clus')});
+    $('#age').click(function() {switchColor('age'); highlight('#age')});
     $('#hospStat').click(() => {switchColor('disch'); highlight('#hospStat')});
     $('#nat').click(() => {switchColor('nat'); highlight('#nat')});
     var renderScene = new RenderPass( scene, camera );
@@ -273,7 +286,6 @@ function switchColor(par) {
     }
 
     for (let color of Object.keys(cKey)) {
-        console.log(cKey[color]);
         keyHtml += `<div style="width:${wdth};font-size:14px;display:flex;align-items:center;">
         <svg width="20" height="20"><rect width="15" height="15" style="fill:#${cKey[color]};" /></svg>   ${color}</div>`
     }
@@ -283,7 +295,7 @@ function switchColor(par) {
 function highlight(button_id) {
     let buttonArr = ['#gend', '#age', '#clus', '#hospStat', '#nat']	
     for (let b of buttonArr) {
-        if (b == button_id) {
+        if (b === button_id) {
             $(b).css('background', '#ffffff');
             $(b).css('color', '#000000');
         } else {
@@ -292,3 +304,4 @@ function highlight(button_id) {
         }
     }
 }
+
