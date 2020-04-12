@@ -130,7 +130,7 @@ class Patient {
                 this.material.color.setHex(dischColor);
                 break;
             case 'highlight':
-                this.material.color.setHex(0xff33aa);
+                this.material.color.setHex(0xaaccee);
                 break;
         }
     }
