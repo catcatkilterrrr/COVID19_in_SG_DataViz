@@ -82,10 +82,10 @@ function init(){
     camera.position.set(0, 0, 20); 
 
     let keyHtml = '';
-    for (let color of Object.keys(clusColors)) {
-        console.log(clusColors[color]);
+    for (let color of Object.keys(clusColorsS)) {
+        console.log(clusColorsS[color]);
         keyHtml += `<div style="width:30%;font-size:14px;display:flex;align-items:center;">
-        <svg width="20" height="20"><rect width="15" height="15" style="fill:#${clusColors[color]};" /></svg>  ${color}</div>`
+        <svg width="20" height="20"><rect width="15" height="15" style="fill:#${clusColorsS[color]};" /></svg>  ${color}</div>`
     }
 
     $('#keyColors').html(keyHtml);

@@ -257,5 +257,3 @@ class Patients {
     }
 
 }   
-
-// export {Patient, Patients}
