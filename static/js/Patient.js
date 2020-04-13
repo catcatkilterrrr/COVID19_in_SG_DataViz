@@ -11,7 +11,10 @@ const clusColors = {
     'PG':0x20fff0,'TD':0xcc66ef,'CLV':0xff66ff,'HER':0x0080ff,
     'SCC':0x00ffbf,'TOB':0x999900,'SKD':0x99FF00,'STG':0x999900,
     'KL':0x990000,'SHAW':0x0103cc,'6BR': 0xff0000,'ICA': 0xff44cc,
-    'NUH' : 0x0035ff,'CP':0xf0ff45,'SKA':0x0ffa3f,'NCL': 0x30ffaf
+    'NUH' : 0x0035ff,'CP':0xf0ff45,'SKA':0x0ffa3f,'NCL': 0x30ffaf,
+    'SEN':0xff3500, 'MCD':0xcc3500, 'WW':0x0035ff, 'WIP':0x343590,
+    'TVD':0xcc35ff , 'TPC':0xcc35ff, '8KD':0x0035ff, 'ABC':0x0035ff,
+    'AL':0xccff35, 'BT':0xff35ff, 'CW':0x00ff35, 'KUBS':0xee3533
     };
 
 const genColors = {'M': 0x6666ff,
@@ -116,16 +119,23 @@ class Patient {
             case 'nat':
                 if (this.nat.includes('Singapore Permanent Resident')) {
                     this.material.color.setHex(0x6699ff);
+                    return;
                 } else if (this.nat.includes('Singapore Citizen')) {
                     this.material.color.setHex(0xffffff);
+                    return;
                 } else if (this.nat.includes('Long Term Pass holder')) {
                     this.material.color.setHex(0x00ff55);
+                    return;
                 } else if (this.nat.includes('Work Pass holder')) {
                     this.material.color.setHex(0x01ff33);
+                    return;
+                } else if (this.nat.includes('Pending')){
+                    this.material.color.setHex(0x555555);
+                    return;
                 } else {
                     this.material.color.setHex(0xaa3030);
+                    return;
                 }
-                break;
             case 'disch':
                 this.material.color.setHex(dischColor);
                 break;
@@ -156,9 +166,12 @@ class Patients {
         for (let i = 0; i<200; i++) {
             this.clusIds[i] = null;
         }
-        this.distribute = [155,55,43,48,143,148,63,68,163,168,34,37,74,77,174,134,137,22,
-        24,26,28,122,124,126,128,82,84,86,88,182,184,186,188,12,14,16,18,112,114,116,118,
-        92,94,96,98,192,194,196,198];
+        this.distribute = [155, 55, 1, 100, 43,48,143,148,63,68,
+            163,168,34,37,74,77,174,134,137,22,
+        24,26,28,122,124,126,128,82,84,86,
+        88,182,184,186,188,12,14,16,18,112,
+        114,116,118,92,94,96,98,192,194,196,
+        198,151,61,13,113,45,51,145,150,65];
     }
 
     addPatient(currentDateId, cn, data) {
@@ -247,9 +260,9 @@ class Patients {
         for (let key of Object.keys(this.clusterCounts)) {
             this.clusterSort.push([key, this.clusterCounts[key]/this.totalCaseCount]);
         }
-        this.clusterSort.sort(function(a, b) {return b[1]-a[1]});
+        this.clusterSort.sort(function(a, b) {return b[1]-a[1]}); //sorts largest - smallest
         for (let i = 0; i< this.clusterSort.length; i++) {
-            this.clusIds[this.distribute[i]]=this.clusterSort[i][0];
+            this.clusIds[this.distribute[i%60]]=this.clusterSort[i][0];
         }
     }
 
