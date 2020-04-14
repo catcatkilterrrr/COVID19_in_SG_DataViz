@@ -18,7 +18,8 @@ const clusColors = {
     };
 
 const genColors = {'M': 0x6666ff,
-                    'F': 0xff5555};
+                    'F': 0xff5555,
+                'Pending': 0x666666};
 
 let clusterKeys = Object.keys(clusColors);
 console.log(clusterKeys.length);

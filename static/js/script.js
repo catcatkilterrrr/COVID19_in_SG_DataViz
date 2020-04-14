@@ -14,6 +14,28 @@ var scene = new THREE.Scene();
 var nodeGraph = new THREE.Object3D();
 var allPatients = new Patients(nodeGraph);
 var currentDateId=1;
+const clusNames = {
+    '6BR': '6 Battery Road','8KD': '85 Kallang Dorm','ABC': 'ABC Hostel',
+    'AL': 'Acacia Lodge','BG': 'boulder+ Gym','BT': 'The Black Tap',
+    'CHN': 'Initial imported China cluster','CLI': 'Cochrane Lodge 1','CLII': 'Cochrane Lodge 2',
+    'CLV': 'Ce La Vi','COS': 'Church of Singapore','CP': 'Cassia@Penjuru',
+    'CW': 'CitiWall', 'DCIS': 'Dover Court International School', 'GAOG': 'Grace Assembly of God church',
+    'GH': 'Grand Hyatt','HER': 'Hero’s','I': 'Imported',
+    'ICA': 'ICA building','KL': 'Kranji Lodge','KS': 'Keppel Shipyard',
+    'KUBS': 'Keppel/UBS','L': 'Linked','LAMH': 'Lee Ah Mooi Home',
+    'LCM': 'Life Church and Missions','LGP': 'Little Gems Preschool','MAM': 'Masjid Al',
+    'MCD': 'McDonalds','MHD': 'Mei Hwan Drive', 'MMRT': 'Maxwell MRT Construction Site',
+    'MUSC': 'Mustafa Center', 'NCL': 'North Coast Lodge','NUH': 'NUH Construction',
+    'PCF': 'PCF Fengshan','PG': 'Project Glory', 'RG': 'Religious gathering in Malaysia',
+    'SAFRA': 'SAFRA Jurong','SAH': 'Seletar Aerospace Heights','SCC': 'Singapore Cricket Club',
+    'SDP': 'S11 Dormitory','SEN': 'Senoko Loop Dorm','SHAW': 'Shaw Lodge',
+    'SKA': 'Sungei Kadut Ave','SKD': 'Sungei Kadut Dorm','SKL': 'Sungei Kadut Dorm',
+    'SPC': 'Singpost Center','STL': 'Sungei Tengah Lodge','TD': 'Tampines Dorm',
+    'TGD': 'Toh Guan Dorm','TOB': 'The Orange Ballroom','TPC': 'Tech Park Crescent Dorm',
+    'TVD': 'Tuas View Dorm','TWB': 'The Wedding Brocade','U': 'Unlinked',
+    'WIP': '36 Woodlands Industrial Park','WR': 'Wilby Residences','WT': 'Wizlearn Technologies',
+    'WTG': 'Westlite Toh Guan Dormitory','WW': 'Westlite Woodlands','YTH': 'Yong Thai Hang'
+};
 
 const clusColorsS = { 
     'CHN': '999900', 'MHD': '990099', 'I': '1ce6ff',
@@ -32,12 +54,15 @@ const clusColorsS = {
     'STG':'999900', 'KL':'990000', 'SHAW':'0103cc',
     '6BR': 'ff0000','ICA': 'ff44cc','NUH' : '0035ff',
     'CP':'f0ff45','SKA':'0ffa3f','NCL': '30ffaf',
+    'SEN':'ff3500', 'MCD':'cc3500', 'WW':'0035ff', 'WIP':'343590',
+    'TVD':'cc35ff' , 'TPC':'cc35ff', '8KD':'0035ff', 'ABC':'0035ff',
+    'AL':'ccff35', 'BT':'ff35ff', 'CW':'00ff35', 'KUBS':'ee3533'
     };
 
 const ageColors = {'y':'hsl(306,100%,40%)', 'o': 'hsl(126,100%,95%)', 'm':'hsl(236,100%,60%)' };
 const natColors = {'Citizen': 'ffffff', 'PR':'6699ff', 'Long term pass': '00ff55', 'Work pass':'01ff33', 'Other':'aa3030'};
 const dischColors = {'Discharged':'55ff55', 'Hospitalized': '9055ff', 'Demised':'ee2020'};
-const genderColors = {'Male':'6666ff', 'Female': 'ff5555'};
+const genderColors = {'Male':'6666ff', 'Female': 'ff5555', 'Pending': '666666'};
 
 var composer; 
 var params = {
@@ -230,10 +255,15 @@ function onDocumentMouseMove(event) {
 function updatePatientData(ptnt) {
     let ptntData = [];
     let ptntHTML = '';
+    let clusters = '';
+    for (let clus of ptnt.clus) {
+        clusters += clusNames[clus] + ', ';
+    }
+    clusters -= ',';
     ptntData.push(`Case Number <br> <div id="patStat"> ${ptnt.caseNumber}</div>`);
     ptntData.push(`Age<br> <div id="patStat">${ptnt.age}</div>`);
     ptntData.push(`Gender<br> <div id="patStat">${ptnt.gender}</div>`);
-    ptntData.push(`Cluster<br> <div id="patStat">${ptnt.clus}</div>`);
+    ptntData.push(`Cluster<br> <div id="patStat">${clusters}</div>`);
     ptntData.push(`Hospital<br><div id="patStat"> ${ptnt.hosp}</div>`);
     ptntData.push(`Nationality<br><div id="patStat"> ${ptnt.nat}</div>`);
     ptntData.push(`Travel History<br> <div id="patStat">${ptnt.th}</div>`);
@@ -287,7 +317,7 @@ function switchColor(par) {
 
     for (let color of Object.keys(cKey)) {
         keyHtml += `<div style="width:${wdth};font-size:14px;display:flex;align-items:center;">
-        <svg width="20" height="20"><rect width="15" height="15" style="fill:#${cKey[color]};" /></svg>   ${color}</div>`
+        <svg width="20" height="20"><rect width="15" height="15" style="fill:#${cKey[color]};" /></svg> ${clusNames[color] ? clusNames[color] : color}</div>`
     }
     $('#keyColors').html(keyHtml);
 }
