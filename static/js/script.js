@@ -133,11 +133,11 @@ function init(){
     // set up HTML, key, buttons, UI elements etc.
     let keyHtml = '';
     for (let color of Object.keys(clusColorsS)) {
-        keyHtml += `<div style="width:30%;font-size:14px;display:flex;align-items:center;">
-        <svg width="20" height="20"><rect width="15" height="15" style="fill:#${clusColorsS[color]};" /></svg>  ${color}</div>`
+        keyHtml += `<div style="width:30%;font-size:12px;display:flex;align-items:center;">
+        <svg width="20" height="20"><rect width="15" height="15" style="fill:#${clusColorsS[color]};" /></svg>  ${clusNames[color]}</div>`
     }
     $('#keyColors').html(keyHtml);
-
+    highlight('#clus');
     $('#next').click(toNext);
     $('#prev').click(toPrev);
     $(document).keydown(function(e) {
@@ -256,7 +256,7 @@ function updatePatientData(ptnt) {
     let ptntData = [];
     let ptntHTML = '';
     let clusters = '';
-    for (let clus of ptnt.clus) {
+    for (let clus of ptnt.clus.split(',')) {
         clusters += clusNames[clus] + ', ';
     }
     clusters.trimRight(', ');
@@ -277,6 +277,7 @@ function updatePatientData(ptnt) {
 function switchColor(par) {
     let keyHtml = '';
     let cKey;
+    let fontSize = '14px';
     let wdth = '47%';
     allPatients.currentParColor = par;
     allPatients.setColor(currentDateId);
@@ -318,11 +319,12 @@ function switchColor(par) {
     for (let color of Object.keys(cKey)) {
         let parLabel;
         if (par == 'cluster') {
-           parLabel = clusNames[color]; 
+           parLabel = clusNames[color];
+           fontSize = '12px'; 
         } else {
             parLabel = color;
         }
-        keyHtml += `<div style="width:${wdth};font-size:14px;display:flex;align-items:center;">
+        keyHtml += `<div style="width:${wdth};font-size:${fontSize};display:flex;align-items:center;">
         <svg width="20" height="20"><rect width="15" height="15" style="fill:#${cKey[color]};" /></svg> ${parLabel}</div>`
     }
     $('#keyColors').html(keyHtml);
