@@ -259,7 +259,7 @@ function updatePatientData(ptnt) {
     for (let clus of ptnt.clus) {
         clusters += clusNames[clus] + ', ';
     }
-    clusters -= ',';
+    clusters.trimRight(', ');
     ptntData.push(`Case Number <br> <div id="patStat"> ${ptnt.caseNumber}</div>`);
     ptntData.push(`Age<br> <div id="patStat">${ptnt.age}</div>`);
     ptntData.push(`Gender<br> <div id="patStat">${ptnt.gender}</div>`);
@@ -316,8 +316,14 @@ function switchColor(par) {
     }
 
     for (let color of Object.keys(cKey)) {
+        let parLabel;
+        if (par == 'cluster') {
+           parLabel = clusNames[color]; 
+        } else {
+            parLabel = color;
+        }
         keyHtml += `<div style="width:${wdth};font-size:14px;display:flex;align-items:center;">
-        <svg width="20" height="20"><rect width="15" height="15" style="fill:#${cKey[color]};" /></svg> ${clusNames[color] ? clusNames[color] : color}</div>`
+        <svg width="20" height="20"><rect width="15" height="15" style="fill:#${cKey[color]};" /></svg> ${parLabel}</div>`
     }
     $('#keyColors').html(keyHtml);
 }
