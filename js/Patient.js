@@ -1,17 +1,17 @@
 // different mesh colors for different clusters
 const clusColors = { 
     'CHN': 0x40e0d0, 'MHD': 0x990099, 'I': 0x50ccee,
-    'U': 0xaa2222,'L': 0x88fa98, 'YTH': 0xff8c66,
+    'U': 0xbc2222,'L': 0x57ea68, 'YTH': 0xff8c66,
     'LCM': 0xffff66,'GAOG': 0x8cff66,'GH': 0x66ffd9,
     'SAH': 0xee82ee,'SAFRA': 0x31aa20,'BG': 0x3acfef,
     'COS': 0xadff2f, 'MAM': 0x90cd00,'RG': 0x6aff00,
     'PCF': 0xffb6c1,'DCIS': 0xffc0cb,'SPC': 0xba77d8,
-    'TWB': 0xda70d6,'WR': 0xf0368c,'SDP': 0xff9966,
+    'TWB': 0xda70d6,'WR': 0xf0368c,'SDP': 0xff776a,
     'WTG':0xeba210, 'SKL': 0xfffacd, 'LAMH':0x34dfa9,
     'MUSC':0x1199ff,'MMRT':0xf4a460,'KS': 0xee3355,
     'WT': 0x0cbdf0,'CLI':0x0cbd66,'CLII': 0x95ff33,
     'STL':0x0f33ff,'TGD':0xffd232, 'PG':0x20fff0,
-    'TD':0xcc66ef, 'CLV':0x99edbb,'HER':0x7fffd4,
+    'TD':0xcef053, 'CLV':0x99edbb,'HER':0x7fffd4,
     'SCC':0x00ffbf,'TOB':0x46dbff,'SKD':0xfa951f,
     'LGP':0x999900, 'KL':0xffa946, 'SHAW':0xfee010,
     '6BR': 0xff9510,'ICA': 0xff69b4,'NUH' : 0xd2691e,
@@ -78,7 +78,7 @@ class Patient {
                 if (this.proportion < 0.1) {
                     this.proportion /= 8;
                 } else {
-                    this.proportion /= 13;
+                    this.proportion /= 15;
                 }
                 this.proportion *= currentDateId;
             }
@@ -132,7 +132,7 @@ class Patient {
                 } else if (this.nat.includes('Long Term Pass holder')) {
                     this.material.color.setHex(0x00ff55);
                     return;
-                } else if (this.nat.includes('Work Pass holder')) {
+                } else if (this.nat.includes('Work') || this.nat.includes('S Pass')) {
                     this.material.color.setHex(0x01ff33);
                     return;
                 } else if (this.nat.includes('Pending')){

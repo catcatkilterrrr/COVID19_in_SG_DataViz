@@ -261,7 +261,7 @@ function updatePatientData(ptnt) {
     for (let clus of ptnt.clus.split(', ')) {
         clusters += clusNames[clus] + ', ';
     }
-    clusters.trim(', ');
+    clusters = clusters.slice(0, -1);
     ptntData.push(`Case Number <br> <div id="patStat"> ${ptnt.caseNumber}</div>`);
     ptntData.push(`Age<br> <div id="patStat">${ptnt.age}</div>`);
     ptntData.push(`Gender<br> <div id="patStat">${ptnt.gender}</div>`);
