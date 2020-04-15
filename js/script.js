@@ -28,35 +28,37 @@ const clusNames = {
     'MUSC': 'Mustafa Center', 'NCL': 'North Coast Lodge','NUH': 'NUH Construction',
     'PCF': 'PCF Fengshan','PG': 'Project Glory', 'RG': 'Religious gathering in Malaysia',
     'SAFRA': 'SAFRA Jurong','SAH': 'Seletar Aerospace Heights','SCC': 'Singapore Cricket Club',
-    'SDP': 'S11 Dormitory','SEN': 'Senoko Loop Dorm','SHAW': 'Shaw Lodge',
+    'SDP': 'S11 Dormitory','SENL': 'Senoko Loop Dorm','SHAW': 'Shaw Lodge',
     'SKA': 'Sungei Kadut Ave','SKD': 'Sungei Kadut Dorm','SKL': 'Sungei Kadut Dorm',
     'SPC': 'Singpost Center','STL': 'Sungei Tengah Lodge','TD': 'Tampines Dorm',
     'TGD': 'Toh Guan Dorm','TOB': 'The Orange Ballroom','TPC': 'Tech Park Crescent Dorm',
     'TVD': 'Tuas View Dorm','TWB': 'The Wedding Brocade','U': 'Unlinked',
     'WIP': '36 Woodlands Industrial Park','WR': 'Wilby Residences','WT': 'Wizlearn Technologies',
-    'WTG': 'Westlite Toh Guan Dormitory','WW': 'Westlite Woodlands','YTH': 'Yong Thai Hang'
+    'WTG': 'Westlite Toh Guan Dormitory','WW': 'Westlite Woodlands','YTH': 'Yong Thai Hang',
+    'PPTA': 'PPT Lodge 1A', 'SENW': '13 Senoko Way'
 };
 
 const clusColorsS = { 
-    'CHN': '999900', 'MHD': '990099', 'I': '1ce6ff',
-    'U': 'ff34ff','L': 'ff4a46', 'YTH': 'ff8c66',
+    'CHN': '40e0d0', 'MHD': '990099', 'I': 'afbbbb',
+    'U': 'aa2222','L': '00fa9a', 'YTH': 'ff8c66',
     'LCM': 'ffff66','GAOG': '8cff66','GH': '66ffd9',
-    'SAH': '8cff66','SAFRA': '6699ff','BG': '8c66ff',
-    'COS': 'ff66ff', 'MAM': 'ff668c','RG': 'bfff00',
-    'PCF': 'f0110f','DCIS': '0080ff','SPC': '4000ff',
-    'TWB': 'bf00ff','WR': 'ff00ff','SDP': 'cccc00',
-    'WTG':'00cc66', 'SKL': '0099cc', 'LAMH':'cc00cc',
-    'MUSC':'5500ff','MMRT':'aaccff','KS': 'ee3355',
+    'SAH': 'ee82ee','SAFRA': '31aa20','BG': '3acfef',
+    'COS': 'adff2f', 'MAM': '90cd00','RG': '6aff00',
+    'PCF': 'ffb6c1','DCIS': 'ffc0cb','SPC': 'ba77d8',
+    'TWB': 'da70d6','WR': 'f0368c','SDP': 'fffce0',
+    'WTG':'eba210', 'SKL': 'fffacd', 'LAMH':'34dfa9',
+    'MUSC':'1199ff','MMRT':'f4a460','KS': 'ee3355',
     'WT': '0cbdf0','CLI':'0cbd66','CLII': '95ff33',
     'STL':'0f33ff','TGD':'4000ff', 'PG':'20fff0',
-    'TD':'cc66ef', 'CLV':'ff66ff','HER':'0080ff',
-    'SCC':'00ffbf','TOB':'999900','SKD':'99FF00',
-    'STG':'999900', 'KL':'990000', 'SHAW':'0103cc',
-    '6BR': 'ff0000','ICA': 'ff44cc','NUH' : '0035ff',
-    'CP':'f0ff45','SKA':'0ffa3f','NCL': '30ffaf',
-    'SEN':'ff3500', 'MCD':'cc3500', 'WW':'0035ff', 'WIP':'343590',
-    'TVD':'cc35ff' , 'TPC':'cc35ff', '8KD':'0035ff', 'ABC':'0035ff',
-    'AL':'ccff35', 'BT':'ff35ff', 'CW':'00ff35', 'KUBS':'ee3533'
+    'TD':'cc66ef', 'CLV':'99edbb','HER':'7fffd4',
+    'SCC':'00ffbf','TOB':'46dbff','SKD':'fa951f',
+    'LGP':'999900', 'KL':'ffa946', 'SHAW':'fee010',
+    '6BR': 'ff9510','ICA': 'ff69b4','NUH' : 'd2691e',
+    'CP':'f0ef45','SKA':'ff5411','NCL': '30ffaf',
+    'SENL':'ff3500', 'MCD':'7fffd4', 'WW':'ffa500', 'WIP':'ff7f50',
+    'TVD':'ff8c00' , 'TPC':'ee3522', '8KD':'ffee00', 'ABC':'ffe500',
+    'AL':'ff6347', 'BT':'22eeee', 'CW':'00ff35', 'KUBS':'ee3533',
+    'PPTA':'ffdab9', 'SENW':'f0e68c'
     };
 
 const ageColors = {'y':'hsl(306,100%,40%)', 'o': 'hsl(126,100%,95%)', 'm':'hsl(236,100%,60%)' };
@@ -85,7 +87,7 @@ $(document).ready(() => {
 
 function init(){
     //grab data for all cases, dates
-    $.getJSON('data/covidData_apr13.json', function(json){
+    $.getJSON('data/covidData_apr14.json', function(json){
         allPatients.data = json;
         allPatients.currentParColor = 'cluster';
         allPatients.getClusterProportions(); 
@@ -104,7 +106,7 @@ function init(){
     window.addEventListener( 'resize', onWindowResize, false );
     $('#graph').mousemove(onDocumentMouseMove);
     camera = new THREE.PerspectiveCamera(60, gw / gh, 0.1, 1000);
-    camera.position.set(0, 0, 20); 
+    camera.position.set(0, 0, 15); 
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(gw, gh);
