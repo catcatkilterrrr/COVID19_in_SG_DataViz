@@ -39,13 +39,13 @@ const clusNames = {
 };
 
 const clusColorsS = { 
-    'CHN': '40e0d0', 'MHD': '990099', 'I': 'afbbbb',
+    'CHN': '40e0d0', 'MHD': '990099', 'I': '50ccee',
     'U': 'aa2222','L': '00fa9a', 'YTH': 'ff8c66',
     'LCM': 'ffff66','GAOG': '8cff66','GH': '66ffd9',
     'SAH': 'ee82ee','SAFRA': '31aa20','BG': '3acfef',
     'COS': 'adff2f', 'MAM': '90cd00','RG': '6aff00',
     'PCF': 'ffb6c1','DCIS': 'ffc0cb','SPC': 'ba77d8',
-    'TWB': 'da70d6','WR': 'f0368c','SDP': 'ff0000',
+    'TWB': 'da70d6','WR': 'f0368c','SDP': 'ff9966',
     'WTG':'eba210', 'SKL': 'fffacd', 'LAMH':'34dfa9',
     'MUSC':'1199ff','MMRT':'f4a460','KS': 'ee3355',
     'WT': '0cbdf0','CLI':'0cbd66','CLII': '95ff33',
@@ -258,7 +258,7 @@ function updatePatientData(ptnt) {
     let ptntData = [];
     let ptntHTML = '';
     let clusters = '';
-    for (let clus of ptnt.clus.split(',')) {
+    for (let clus of ptnt.clus.split(', ')) {
         clusters += clusNames[clus] + ', ';
     }
     clusters.trim(', ');
