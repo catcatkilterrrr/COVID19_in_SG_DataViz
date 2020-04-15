@@ -21,7 +21,7 @@ const clusNames = {
     'CLV': 'Ce La Vi','COS': 'Church of Singapore','CP': 'Cassia@Penjuru',
     'CW': 'CitiWall', 'DCIS': 'Dover Court International School', 'GAOG': 'Grace Assembly of God church',
     'GH': 'Grand Hyatt','HER': 'Hero’s','I': 'Imported',
-    'ICA': 'ICA building','KL': 'Kranji Lodge','KS': 'Keppel Shipyard',
+    'ICA': 'ICA building','KD': 'Kranji Dorm', 'KL': 'Kranji Lodge','KS': 'Keppel Shipyard',
     'KUBS': 'Keppel/UBS','L': 'Linked','LAMH': 'Lee Ah Mooi Home',
     'LCM': 'Life Church and Missions','LGP': 'Little Gems Preschool','MAM': 'Masjid Al',
     'MCD': 'McDonalds','MHD': 'Mei Hwan Drive', 'MMRT': 'Maxwell MRT Construction Site',
@@ -35,7 +35,8 @@ const clusNames = {
     'TVD': 'Tuas View Dorm','TWB': 'The Wedding Brocade','U': 'Unlinked',
     'WIP': '36 Woodlands Industrial Park','WR': 'Wilby Residences','WT': 'Wizlearn Technologies',
     'WTG': 'Westlite Toh Guan Dormitory','WW': 'Westlite Woodlands','YTH': 'Yong Thai Hang',
-    'PPTA': 'PPT Lodge 1A', 'SENW': '13 Senoko Way'
+    'PPTA': 'PPT Lodge 1A', 'SENW': '13 Senoko Way', 'KTC': '10 Kian Teck Crescent', 'KTD': 'Kian Teck Dorm',
+    '234BR': '234 Balestier Road', 'ML': 'Mandai Lodge'
 };
 
 const clusColorsS = { 
@@ -261,7 +262,7 @@ function updatePatientData(ptnt) {
     for (let clus of ptnt.clus.split(', ')) {
         clusters += clusNames[clus] + ', ';
     }
-    clusters = clusters.slice(0, -1);
+    clusters = clusters.slice(0, -2);
     ptntData.push(`Case Number <br> <div id="patStat"> ${ptnt.caseNumber}</div>`);
     ptntData.push(`Age<br> <div id="patStat">${ptnt.age}</div>`);
     ptntData.push(`Gender<br> <div id="patStat">${ptnt.gender}</div>`);
