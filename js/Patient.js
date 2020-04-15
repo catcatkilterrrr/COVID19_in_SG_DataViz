@@ -97,7 +97,7 @@ class Patient {
         let geometry = new THREE.SphereBufferGeometry(0.1,6,6);
         geometry.translate(this.translate.x, this.translate.y, this.translate.z);
         this.material = new THREE.MeshBasicMaterial();
-        this.material.color.setHex( clusColors[this.clus.split(',')[0]] ? parseInt(clusColors[this.clus.split(',')[0]], 16) : 0xffffff ); 
+        this.material.color.setHex( clusColors[this.clus.split(',')[0]] ? clusColors[this.clus.split(',')[0]] : 0xffffff ); 
         this.geom = new THREE.Mesh(geometry, this.material);
     }
 
@@ -119,7 +119,7 @@ class Patient {
                 this.material.color.setHSL(0.85-(ageColor/2), 1.0, 0.4+(ageColor/1.85));
                 break;
             case 'cluster':
-                this.material.color.setHex(parseInt(clusColors[this.clus.split(',')[0]],16));
+                this.material.color.setHex(clusColors[this.clus.split(',')[0]]);
                 break;
             case 'gender':
                 this.material.color.setHex(genColors[this.gender]);
