@@ -177,7 +177,7 @@ class Patients {
         24,26,28,122,124,126,128,82,84,86,
         88,182,184,186,188,12,14,16,18,112,
         114,116,118,92,94,96,98,192,194,196,
-        198,151,61,13,113,45,51,145,150,65];
+        198,151,61,13,113,45,51,145,150,65,165, 35, 75,, 79, 135];
     }
 
     addPatient(currentDateId, cn, data) {
@@ -271,7 +271,7 @@ class Patients {
         }
         this.clusterSort.sort(function(a, b) {return b[1]-a[1]}); //sorts largest - smallest
         for (let i = 0; i< this.clusterSort.length; i++) {
-            this.clusIds[this.distribute[i%60]]=this.clusterSort[i][0];
+            this.clusIds[this.distribute[i]]=this.clusterSort[i][0];
         }
     }
 
