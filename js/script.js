@@ -45,7 +45,7 @@ const clusColorsS = {
     'SAH': 'ee82ee','SAFRA': '31aa20','BG': '3acfef',
     'COS': 'adff2f', 'MAM': '90cd00','RG': '6aff00',
     'PCF': 'ffb6c1','DCIS': 'ffc0cb','SPC': 'ba77d8',
-    'TWB': 'da70d6','WR': 'f0368c','SDP': 'fffce0',
+    'TWB': 'da70d6','WR': 'f0368c','SDP': 'ffcc00',
     'WTG':'eba210', 'SKL': 'fffacd', 'LAMH':'34dfa9',
     'MUSC':'1199ff','MMRT':'f4a460','KS': 'ee3355',
     'WT': '0cbdf0','CLI':'0cbd66','CLII': '95ff33',
