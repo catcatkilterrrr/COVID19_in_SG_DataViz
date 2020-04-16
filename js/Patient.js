@@ -1,7 +1,7 @@
 // different mesh colors for different clusters
 const clusColors = {
-    'CHN': 0x33d0c0, 'MHD': 0x990099, 'I': 0x40c9f0,
-    'U': 0xbe2222, 'L': 0x30aa43, 'YTH': 0xff8c66,
+    'CHN': 0x33d0c0, 'MHD': 0x990099, 'I': 0x30c0e0,
+    'U': 0xbe2222, 'L': 0x30a043, 'YTH': 0xff8c66,
     'LCM': 0xeeff55, 'GAOG': 0x8cef36, 'GH': 0x60eede,
     'SAH': 0xee82ee, 'SAFRA': 0x31aa20, 'BG': 0x3acfef,
     'COS': 0x5dff2f, 'MAM': 0x90cd00, 'RG': 0x6aff00,
@@ -10,9 +10,9 @@ const clusColors = {
     'WTG': 0xeba210, 'SKL': 0xfffacd, 'LAMH': 0x34dfa9,
     'MUSC': 0x1199ff, 'MMRT': 0xf4a460, 'KS': 0xee3355,
     'WT': 0xfcb0f3, 'CLI': 0xffc033, 'CLII': 0x95ff33,
-    'STL': 0xeff3c0, 'TGD': 0xffd232, 'PG': 0x20fff0,
+    'STL': 0xeff3a0, 'TGD': 0xffd232, 'PG': 0x20fff0,
     'TD': 0xcef053, 'CLV': 0x99edbb, 'HER': 0x7fffd4,
-    'SCC': 0x10ffbf, 'TOB': 0x46dbff, 'SKD': 0xfa951f,
+    'SCC': 0x10ffbf, 'TOB': 0x46dbff, 'SKD': 0xfa9500,
     'LGP': 0x999900, 'KL': 0xffa946, 'SHAW': 0xfee010,
     '6BR': 0xff9510, 'ICA': 0xff69b4, 'NUH': 0xd2691e,
     'CP': 0xf0ef45, 'SKA': 0xff540f, 'NCL': 0x30ffaf,
