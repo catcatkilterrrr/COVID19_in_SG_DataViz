@@ -89,7 +89,7 @@ $(document).ready(() => {
 
 function init(){
     //grab data for all cases, dates
-    $.getJSON('data/covidData_apr14.json', function(json){
+    $.getJSON('data/covidData_apr15.json', function(json){
         allPatients.data = json;
         allPatients.currentParColor = 'cluster';
         allPatients.getClusterProportions(); 
