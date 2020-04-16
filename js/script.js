@@ -40,28 +40,23 @@ const clusNames = {
 };
 
 const clusColorsS = {
-    'CHN': '40e0d0', 'MHD': '990099', 'I': 'afbbbb',
-    'U': 'aa2222', 'L': '00fa9a', 'YTH': 'ff8c66',
-    'LCM': 'ffff66', 'GAOG': '8cff66', 'GH': '66ffd9',
-    'SAH': 'ee82ee', 'SAFRA': '31aa20', 'BG': '3acfef',
-    'COS': 'adff2f', 'MAM': '90cd00', 'RG': '6aff00',
-    'PCF': 'f0110f', 'DCIS': '0080ff', 'SPC': '4000ff',
-    'TWB': 'bf00ff', 'WR': 'ff00ff', 'SDP': 'cccc00',
-    'WTG': 'eba210', 'SKL': '0099cc', 'LAMH': 'cc00cc',
-    'MUSC': '5500ff', 'MMRT': 'aaccff', 'KS': 'ee3355',
-    'WT': '0cbdf0', 'CLI': '0cbd66', 'CLII': '95ff33',
-    'STL': '0f33ff', 'TGD': '4000ff', 'PG': '20fff0',
-    'TD': 'cc66ef', 'CLV': 'ff66ff', 'HER': '0080ff',
-    'SCC': '00ffbf', 'TOB': '46dbff', 'SKD': 'fa951f',
-    'LGP': '999900', 'KL': 'ffa946', 'SHAW': 'fee010',
-    '6BR': 'ff9510', 'ICA': 'ff69b4', 'NUH': 'd2691e',
-    'CP': 'f0ef45', 'SKA': 'ff5411', 'NCL': '30ffaf',
-    'SENL': 'ff3500', 'MCD': '7fffd4', 'WW': 'ffa500', 'WIP': 'ff7f50',
-    'TVD': 'ff8c00', 'TPC': 'ee3522', '8KD': 'ffee00', 'ABC': 'ffe500',
-    'AL': 'ff6347', 'BT': '22eeee', 'CW': '00ff35', 'KUBS': 'ee3533',
-    'PPTA': 'ffdab9', 'SENW': 'f0e68c', 'KD':'fe5604', 'KTC': 'ffff00',
-    'KTD': 'ef9200', '234BR': 'fe5609', 'ML': 'e0f0a0'
-};
+'234BR': 'fe5609','6BR': 'ff9510','8KD': 'ffee00','ABC': 'ffe500',
+'AL': 'ee9947','BG': '3acfef','BT': '22eeee','CHN': '33d0c0',
+'CLI': 'ffc033','CLII': '95ff33','CLV': '99edbb','COS': '5dff2f',
+'CP': 'f0ef45','CW': '10ff35','DCIS': 'ffc0cb','GAOG': '8cef36',
+'GH': '60eede','HER': '7fffd4','I': '40c9f0','ICA': 'ff69b4',
+'KD': 'fe5604','KL': 'ffa946','KS': 'ee3355','KTC': 'ffff00',
+'KTD': 'ef9200','KUBS': 'ee3533','L': '30aa43','LAMH': '34dfa9',
+'LCM': 'eeff55','LGP': '999900','MAM': '90cd00','MCD': '7fffd4',
+'MHD': '990099','ML': 'e0f0a0','MMRT': 'f4a460','MUSC': '1199ff',
+'NCL': '30ffaf','NUH': 'd2691e','PCF': 'ffb6c1','PG': '20fff0',
+'PPTA': 'ffdab9','RG': '6aff00','SAFRA': '31aa20','SAH': 'ee82ee',
+'SCC': '10ffbf','SDP': 'ff776a','SENL': 'ff3500','SENW': 'f0e68c',
+'SHAW': 'fee010','SKA': 'ff540f','SKD': 'fa951f','SKL': 'fffacd',
+'SPC': 'ba77d8','STL': 'eff3c0','TD': 'cef053','TGD': 'ffd232',
+'TOB': '46dbff','TPC': 'ee3522','TVD': 'ff8c00','TWB': 'df60ff',
+'U': 'be2222','WIP': 'ff7f50','WR': 'f0368c','WT': 'fcb0f3',
+'WTG': 'eba210','WW': 'ffa500','YTH': 'ff8c66'};
 
 const ageColors = {'y':'hsl(306,100%,40%)', 'o': 'hsl(126,100%,95%)', 'm':'hsl(236,100%,60%)' };
 const natColors = {'Citizen': 'ffffff', 'PR':'6699ff', 'Long term pass': '00ff55', 'Work pass':'01ff33', 'Other':'aa3030'};
