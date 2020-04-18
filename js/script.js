@@ -36,27 +36,32 @@ const clusNames = {
     'WIP': '36 Woodlands Industrial Park','WR': 'Wilby Residences','WT': 'Wizlearn Technologies',
     'WTG': 'Westlite Toh Guan Dormitory','WW': 'Westlite Woodlands','YTH': 'Yong Thai Hang',
     'PPTA': 'PPT Lodge 1A', 'SENW': '13 Senoko Way', 'KTC': '10 Kian Teck Crescent', 'KTD': 'Kian Teck Dorm',
-    '234BR': '234 Balestier Road', 'ML': 'Mandai Lodge'
+    '234BR': '234 Balestier Road', 'MLI': 'Mandai Lodge I', 'LEO': 'Leo Dorm',
+    'SJD': 'SJ Dorm', 'WM':'Westlite Mandai', 'SKS': '17 Sungei Kadut Street 4',
+    'GWB': 'Grandwork Building', 'TSD': 'Tuas South Dorm', 'ALD': 'Avery Lodge Dorm',
+    'JPD': 'Jurong Penjuru Dorm', '4SKS': '4 Sungei Kadut Street 2'
 };
 
 const clusColorsS = {
-'234BR': 'fe5609','6BR': 'ff9510','8KD': 'ffee00','ABC': 'ffe500',
-'AL': 'ee9947','BG': '3acfef','BT': '22eeee','CHN': '33d0c0',
-'CLI': 'ffc033','CLII': '95ff33','CLV': '99edbb','COS': '5dff2f',
-'CP': 'f0ef45','CW': '10ff35','DCIS': 'ffc0cb','GAOG': '8cef36',
-'GH': '60eede','HER': '7fffd4','I': '30c0e0','ICA': 'ff69b4',
-'KD': 'fe5604','KL': 'ffa946','KS': 'ee3355','KTC': 'ffff00',
-'KTD': 'ef9200','KUBS': 'ee3533','L': '30a043','LAMH': '34dfa9',
-'LCM': 'eeff55','LGP': '999900','MAM': '90cd00','MCD': '7fffd4',
-'MHD': '990099','ML': 'e0f0a0','MMRT': 'f4a460','MUSC': '1199ff',
-'NCL': '30ffaf','NUH': 'd2691e','PCF': 'ffb6c1','PG': '20fff0',
-'PPTA': 'ffdab9','RG': '6aff00','SAFRA': '31aa20','SAH': 'ee82ee',
-'SCC': '10ffbf','SDP': 'ff776a','SENL': 'ff3500','SENW': 'f0e68c',
-'SHAW': 'fee010','SKA': 'ff540f','SKD': 'fa9500','SKL': 'fffacd',
-'SPC': 'ba77d8','STL': 'eff3a0','TD': 'cef053','TGD': 'ffd232',
-'TOB': '46dbff','TPC': 'ee3522','TVD': 'ff8c00','TWB': 'df60ff',
-'U': 'be2222','WIP': 'ff7f50','WR': 'f0368c','WT': 'fcb0f3',
-'WTG': 'eba210','WW': 'ffa500','YTH': 'ff8c66'};
+    '234BR': 'fe5609','4SKS': 'fee010','6BR': 'ff9510','8KD': 'ffee00',
+    'ABC': 'ffe500','AL': 'ee9947','ALD': 'fee010','BG': '3acfef','BT': '22eeee',
+    'CHN': '33d0c0','CLI': 'ffc033','CLII': '95ff33','CLV': '99edbb',
+    'COS': '5dff2f','CP': 'f0ef45','CW': '10ff35','DCIS': 'ffc0cb',
+    'GAOG': '8cef36','GH': '60eede','GWB': 'fee010','HER': '7fffd4',
+    'I': '30c0e0','ICA': 'ff69b4','JPD': 'fee010','KD': 'fe5604',
+    'KL': 'ffa946','KS': 'ee3355','KTC': 'ffff00','KTD': 'ef9200',
+    'KUBS': 'ee3533','L': '30a043','LAMH': '34dfa9','LCM': 'eeff55',
+    'LEO': 'fee010','LGP': '999900','MAM': '90cd00','MCD': '7fffd4',
+    'MHD': '990099','MLI': 'e0f0a0','MMRT': 'f4a460','MUSC': '1199ff',
+    'NCL': '30ffaf','NUH': 'd2691e','PCF': 'ffb6c1','PG': '20fff0',
+    'PPTA': 'ffdab9','RG': '6aff00','SAFRA': '31aa20','SAH': 'ee82ee',
+    'SCC': '10ffbf','SDP': 'ff776a','SENL': 'ff3500','SENW': 'f0e68c',
+    'SHAW': 'fee010','SJD': 'eff3a0','SKA': 'ff540f','SKD': 'fa9500',
+    'SKL': 'fffacd','SKS': 'eff3a0','SPC': 'ba77d8','STL': 'eff3a0',
+    'TD': 'cef053','TGD': 'ffd232','TOB': '46dbff','TPC': 'ee3522',
+    'TSD': 'fee010','TVD': 'ff8c00','TWB': 'df60ff','U': 'be2222',
+    'WIP': 'ff7f50','WM': 'ffff00','WR': 'f0368c','WT': 'fcb0f3',
+    'WTG': 'eba210','WW': 'ffa500','YTH': 'ff8c66'};
 
 const ageColors = {'y':'hsl(306,100%,40%)', 'o': 'hsl(126,100%,95%)', 'm':'hsl(236,100%,60%)' };
 const natColors = {'Citizen': 'ffffff', 'PR':'6699ff', 'Long term pass': '00ff55', 'Work pass':'01ff33', 'Other':'aa3030'};
@@ -84,7 +89,7 @@ $(document).ready(() => {
 
 function init(){
     //grab data for all cases, dates
-    $.getJSON('data/covidData_apr15.json', function(json){
+    $.getJSON('data/covidData_apr17.json', function(json){
         allPatients.data = json;
         allPatients.currentParColor = 'cluster';
         allPatients.getClusterProportions(); 
