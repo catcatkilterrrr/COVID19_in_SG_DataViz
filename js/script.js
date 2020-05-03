@@ -39,7 +39,8 @@ const clusNames = {
     '234BR': '234 Balestier Road', 'MLI': 'Mandai Lodge I', 'LEO': 'Leo Dorm',
     'SJD': 'SJ Dorm', 'WM':'Westlite Mandai', 'SKS': '17 Sungei Kadut Street 4',
     'GWB': 'Grandwork Building', 'TSD': 'Tuas South Dorm', 'ALD': 'Avery Lodge Dorm',
-    'JPD': 'Jurong Penjuru Dorm', '4SKS': '4 Sungei Kadut Street 2'
+    'JPD': 'Jurong Penjuru Dorm', '4SKS': '4 Sungei Kadut Street 2', 'HL': 'Homestay Lodge',
+    'CTD': 'CDPL Tuas Dorm', 'TTJ':'TTJ Design & Engineering'
 };
 
 const clusColorsS = {

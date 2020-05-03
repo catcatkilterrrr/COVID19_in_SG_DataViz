@@ -2,7 +2,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #121212;
     color: #ffffff;
-    letter-spacing: 0.05em;
 }
 
 a {
@@ -103,8 +102,8 @@ a {
 }
 
 .dateButton {
-	background-color:transparent;
-    color:#ffffff;
+	background-color:white;
+    color:#000000;
     border: transparent;
 	font-family:Arial;
 	font-size:32px;
