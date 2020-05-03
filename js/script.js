@@ -165,7 +165,7 @@ function init(){
     $('#hospStat').click(() => {switchColor('disch'); highlight('#hospStat')});
     $('#nat').click(() => {switchColor('nat'); highlight('#nat')});
 
-
+    $('#ok').click(()=>{$('#overlay').css('display', 'none')});
     animate();
 
     function animate() {
