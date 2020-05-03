@@ -120,8 +120,8 @@ a {
     flex-grow: 1;
     background-color: transparent;
     border: white;
-    margin: 1px;
-    padding: 3px;
+    margin: 2px;
+    padding: 2px;
     text-align: left;
     border-width: 1px;
     border-style: solid;
@@ -136,6 +136,6 @@ a {
     flex-direction: row;
     align-content: flex-start;
     flex-grow: 10;
-    height: 30%;
+    height: 35%;
     overflow: auto;
 }
