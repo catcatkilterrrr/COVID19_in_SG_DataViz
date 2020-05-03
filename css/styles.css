@@ -120,7 +120,7 @@ a {
     flex-grow: 1;
     background-color: transparent;
     border: white;
-    margin:0px;
+    margin:1px;
     padding: 5px;
     text-align: left;
     border-width: 1px;
@@ -136,13 +136,13 @@ a {
     flex-direction: row;
     align-content: flex-start;
     flex-grow: 10;
-    height: 42%;
+    height: 45%;
     overflow: auto;
 }
 
 #overlay {
     position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
+    display: block; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
     top: 0;
