@@ -120,8 +120,8 @@ a {
     flex-grow: 1;
     background-color: transparent;
     border: white;
-    margin: 2px;
-    padding: 3px;
+    margin:1px;
+    padding: 5px;
     text-align: left;
     border-width: 1px;
     border-style: solid;
