@@ -26,7 +26,7 @@ a {
     display: flex;
     flex-basis:18%;
     flex-shrink: 2;
-    padding: 15px;
+    padding: 10px;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -68,7 +68,7 @@ a {
 }
 
 #dateData {
-    width: 31vw;
+    width: 30vw;
     margin: 3px;
 }
 
@@ -94,12 +94,12 @@ a {
 
 
 #news {
-    width: 31vw;
+    width: 30vw;
     padding: 15px;
     overflow: auto;
 }
 #sm {
-    width: 31vw;
+    width: 30vw;
     padding: 15px;
     overflow: auto;
 }
@@ -121,7 +121,7 @@ a {
     background-color: transparent;
     border: white;
     margin: 1px;
-    padding: 5px;
+    padding: 3px;
     text-align: left;
     border-width: 1px;
     border-style: solid;
