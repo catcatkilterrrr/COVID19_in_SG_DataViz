@@ -23,7 +23,7 @@ const clusColors = {
     'KTD': 0xef9200, '234BR': 0xfe5609, 'MLI': 0xe0f0a0, 'WM':0xffff00,
     'SJD':0xeff3a0, 'SKS':0xeff3a0, 'LEO':0xfee010,'GWB':0xfee010,
     'ALD':0xfee010,'JPD':0xfee010,'4SKS':0xfee010, 'TSD': 0xfee010
-    'HL':, 'CTD', 'TTJ':
+    'HL':0xfee010, 'CTD':0xfee010, 'TTJ': 0xfee010 
 };
 
 
