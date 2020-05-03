@@ -26,7 +26,7 @@ a {
     display: flex;
     flex-basis:18%;
     flex-shrink: 2;
-    padding: 5px;
+    padding: 3px;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -120,7 +120,7 @@ a {
     flex-grow: 1;
     background-color: transparent;
     border: white;
-    margin:1px;
+    margin:0px;
     padding: 5px;
     text-align: left;
     border-width: 1px;
@@ -136,6 +136,6 @@ a {
     flex-direction: row;
     align-content: flex-start;
     flex-grow: 10;
-    height: 40%;
+    height: 42%;
     overflow: auto;
 }
