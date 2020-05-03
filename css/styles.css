@@ -69,6 +69,7 @@ a {
 
 #dateData {
     width: 31vw;
+    margin: 5px;
 }
 
 #numbers {
@@ -95,10 +96,12 @@ a {
 #news {
     width: 31vw;
     padding: 15px;
+    overflow: auto;
 }
 #sm {
     width: 31vw;
     padding: 15px;
+    overflow: auto;
 }
 
 .dateButton {
@@ -107,7 +110,8 @@ a {
     border: transparent;
 	font-family:Arial;
 	font-size:32px;
-	padding:16px;
+    padding:16px;
+    margin: 3px;
 	text-decoration:none;
 }
 
