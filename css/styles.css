@@ -170,5 +170,7 @@ a {
     color: white;
     border-width: 2px;
     border-color: white;
-    padding: 5px;
+    padding: 10px;
+    margin: auto;
+    width: 25%
 }
