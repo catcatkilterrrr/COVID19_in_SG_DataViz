@@ -115,7 +115,7 @@ a {
 	text-decoration:none;
 }
 
-.parKey #ok {
+.parKey {
     width: 100%;
     flex-grow: 1;
     background-color: transparent;
@@ -162,4 +162,13 @@ a {
     color: white;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
+}
+
+#ok {
+    background: transparent;
+    font-size: 30px;
+    color: white;
+    border: 1px;
+    border-color: white;
+    padding: 5px;
 }
