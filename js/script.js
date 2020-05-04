@@ -330,7 +330,7 @@ function switchColor(par) {
             parLabel = color;
         }
         keyHtml += `<div style="width:${wdth};font-size:${fontSize};display:flex;align-items:center;">
-        <svg width="20" height="20"><rect width="15" height="15" style="fill:#${cKey[color]};" /></svg> ${parLabel}</div>`
+        <svg width="20" height="20"><rect width="15" height="15" style="fill:#${cKey[color]}; margin: 1px;" /></svg> ${parLabel}</div>`
     }
     $('#keyColors').html(keyHtml);
 }
