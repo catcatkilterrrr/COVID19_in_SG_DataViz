@@ -161,10 +161,7 @@ a {
     font-size: 20px;
     color: white;
     transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    display: flex;
-    justify-content: center;
-    
+    -ms-transform: translate(-50%,-50%);    
 }
 
 #ok {
@@ -174,5 +171,6 @@ a {
     border-width: 2px;
     border-color: white;
     padding: 10px;
-    width: 25%
+    width: 25%;
+    left: 50%;
 }
