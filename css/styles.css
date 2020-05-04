@@ -168,7 +168,7 @@ a {
     background: transparent;
     font-size: 30px;
     color: white;
-    border: 1px;
+    border-width: 2px;
     border-color: white;
     padding: 5px;
 }
