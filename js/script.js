@@ -1,11 +1,16 @@
 import * as THREE from './three/build/three.js';
 // var THREE = require('/node_modules/three/build/three');
 import {Patients} from './Patient.js';
-import { OrbitControls } from 'https://threejs.org/examples/jsm/controls/OrbitControls.js';
-import { EffectComposer } from 'https://threejs.org/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from 'https://threejs.org/examples/jsm/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from 'https://threejs.org/examples/jsm/postprocessing/UnrealBloomPass.js';
-import { BokehPass } from 'https://threejs.org/examples/jsm/postprocessing/BokehPass.js';
+// import { OrbitControls } from 'https://threejs.org/examples/jsm/controls/OrbitControls.js';
+import { OrbitControls } from './three/examples/js/controls/OrbitControls.js';
+// import { EffectComposer } from 'https://threejs.org/examples/jsm/postprocessing/EffectComposer.js';
+import { EffectComposer } from './three/examples/js/postprocessing/EffectComposer.js';
+// import { RenderPass } from 'https://threejs.org/examples/jsm/postprocessing/RenderPass.js';
+import { RenderPass } from './three/examples/js/postprocessing/RenderPass.js';
+// import { UnrealBloomPass } from 'https://threejs.org/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { UnrealBloomPass } from './three/examples/js/postprocessing/UnrealBloomPass.js';
+// import { BokehPass } from 'https://threejs.org/examples/jsm/postprocessing/BokehPass.js';
+import { BokehPass } from './three/examples/js/postprocessing/BokehPass.js';
 
 var camera, renderer, prevMouse;
 var raycaster = new THREE.Raycaster();
