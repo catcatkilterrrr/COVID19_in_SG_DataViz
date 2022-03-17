@@ -1,4 +1,4 @@
-// import * as THREE from '/node_modules/three/build/three.js';
+import * as THREE from '/node_modules/three/build/three.js';
 // var THREE = require('/node_modules/three/build/three');
 import {Patients} from './Patient.js';
 import { OrbitControls } from 'https://threejs.org/examples/jsm/controls/OrbitControls.js';
